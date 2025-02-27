@@ -5,15 +5,8 @@ import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import authRoute from "./routes/auth.route.js";
 import userRoute from "./routes/user.route.js";
-import productRoute from "./routes/products.route.js";
-import orderRoute from "./routes/order.route.js"
-import stripe from "./routes/stripe.route.js";
-import membership from "./routes/membership.route.js";
-import photoRoutes from './routes/photo.route.js';
-import achievementRoutes from './routes/achievement.route.js';
-import articleRoutes from './routes/article.route.js';
-import bearersRoutes from './routes/bearers.route.js';
-import activityRoutes from './routes/activities.route.js';
+import studioRoute from "./routes/studios.route.js";
+
 
 
 dotenv.config();
@@ -40,15 +33,8 @@ app.use(cors(corsOptions));
 
 app.use("/api/auth",authRoute);
 app.use("/api/user",userRoute); 
-app.use("/api/products", productRoute);
-app.use("/api/order",orderRoute);
-app.use("/api/stripe",stripe);
-app.use("/api/membership",membership);
-app.use("/api/photos",photoRoutes)
-app.use('/api/achievements', achievementRoutes);
-app.use('/api/articles', articleRoutes);
-app.use('/api/bearers', bearersRoutes);
-app.use('/api/activities', activityRoutes);
+app.use("/api/studios", studioRoute);
+
 
 
 

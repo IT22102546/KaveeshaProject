@@ -2,15 +2,14 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import userReducer from './user/userSlice';
-import productsReducer from './product/productSlice';
-import { productsApi } from './product/productApi';
-import cartReducer, { getCartTotal } from './cart/cartSlice';
+import studiosReducer from './studio/studiosSlice';
+import { studioApi } from './studio/studioApi';
+
 
 const rootReducer = combineReducers({
   user: userReducer,
-  products: productsReducer,
-  cart: cartReducer,
-  [productsApi.reducerPath]: productsApi.reducer,
+  studios: studiosReducer,
+  [studioApi.reducerPath]: studioApi.reducer,
 });
 
 const persistConfig = {
@@ -24,9 +23,9 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }).concat(productsApi.middleware),
+    getDefaultMiddleware({ serializableCheck: false }).concat(studioApi.middleware),
 });
 
-store.dispatch(getCartTotal());
+
 
 export const persistor = persistStore(store);

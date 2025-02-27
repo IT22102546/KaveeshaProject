@@ -8,13 +8,13 @@ const initialState = {
 };
 
 
-export const productFetch = createAsyncThunk(
-  "products/productsFetch",
+export const studioFetch = createAsyncThunk(
+  "studios/studiosFetch",
   async (_, { signal, rejectWithValue }) => {
     try {
-      const response = await fetch("/api/products/getproducts", { signal });
+      const response = await fetch("/api/studios/getstudios", { signal });
       if (!response.ok) {
-        throw new Error("Failed to fetch products");
+        throw new Error("Failed to fetch studios");
       }
       const data = await response.json(); 
       return data;
@@ -24,25 +24,25 @@ export const productFetch = createAsyncThunk(
   }
 );
 
-const productsSlice = createSlice({
-    name :"products",
+const studiosSlice = createSlice({
+    name :"studios",
     initialState,
     reducers:{},
     extraReducers: (builder) => {
         builder
-          .addCase(productFetch.pending, (state, action) => {
+          .addCase(studioFetch.pending, (state, action) => {
             state.status = "pending";
           })
-          .addCase(productFetch.fulfilled, (state, action) => {
+          .addCase(studioFetch.fulfilled, (state, action) => {
             state.status = "success";
             state.items = action.payload;
           })
-          .addCase(productFetch.rejected, (state, action) => {
+          .addCase(studioFetch.rejected, (state, action) => {
             state.status = "rejected";
             state.error = action.payload;
           });
     },
 });
 
-export default productsSlice.reducer;
+export default studiosSlice.reducer;
 

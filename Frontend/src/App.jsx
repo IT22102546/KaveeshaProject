@@ -7,6 +7,7 @@ import OnlyAdminPrivateRoute from './Components/OnlyAdminPrivateRoute';
 import Header from './Components/Header';
 import PrivateRoute from './Components/PrivateRoute';
 import DashBoard from './Pages/DashBoard';
+import AddStudio from './Pages/AddStudios';
 
 
 export default function App() {
@@ -25,7 +26,7 @@ export default function App() {
         <Route/>
 
         <Route element={<OnlyAdminPrivateRoute/>}>
-         
+           <Route path="/addstudios" element={<AddStudio/>}/>
         </Route>
 
       </Routes>
