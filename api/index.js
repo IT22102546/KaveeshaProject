@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 import authRoute from "./routes/auth.route.js";
 import userRoute from "./routes/user.route.js";
 import studioRoute from "./routes/studios.route.js";
-
+import bookingRoute from "./routes/booking.router.js";
 
 
 dotenv.config();
@@ -34,6 +34,7 @@ app.use(cors(corsOptions));
 app.use("/api/auth",authRoute);
 app.use("/api/user",userRoute); 
 app.use("/api/studios", studioRoute);
+app.use("/api/bookings", bookingRoute);
 
 
 

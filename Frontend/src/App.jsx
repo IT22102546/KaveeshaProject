@@ -8,6 +8,8 @@ import Header from './Components/Header';
 import PrivateRoute from './Components/PrivateRoute';
 import DashBoard from './Pages/DashBoard';
 import AddStudio from './Pages/AddStudios';
+import BookingSummary from './Pages/BookingSummary';
+import SuccessPage from './Pages/Success';
 
 
 export default function App() {
@@ -22,7 +24,8 @@ export default function App() {
 
         <Route element={<PrivateRoute/>}/>
           <Route path="/dashboard" element={<DashBoard/>}/>
-          
+          <Route path="/booking-summary" element={<BookingSummary/>}/>
+          <Route path="/success" element={<SuccessPage/>}/>
         <Route/>
 
         <Route element={<OnlyAdminPrivateRoute/>}>
