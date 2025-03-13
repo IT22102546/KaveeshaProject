@@ -48,7 +48,6 @@ export default function Home() {
         address: currentUser.adress,  
         studioId: studio._id,
         studioTitle: studio.title,
-        price: studio.price,
         mainImage: studio.mainImage,
         services: studio.services || [],
       },
@@ -84,9 +83,6 @@ export default function Home() {
               <h2 className="text-2xl font-semibold text-gray-800">
                 {studio.title || "No Title"}
               </h2>
-              <p className="text-xl font-bold text-gray-700 mt-2">
-                ${studio.price || "N/A"}
-              </p>
 
               <div className="flex justify-between mt-4">
                 <button

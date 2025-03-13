@@ -31,16 +31,18 @@ export default function Header() {
   };
 
   return (
-    <Navbar className="border-b-2 relative z-50" style={{ background: 'linear-gradient(to left, rgb(170, 63, 47), blue)' }}>
+    <Navbar className="border-b-2 relative z-50" style={{ background: 'linear-gradient(to right, rgb(20,10, 60), blue)' }}>
       <div className="container mx-auto flex items-center justify-between py-4">
 
         {/* Logo */}
         <div className="flex items-center">
           <NavLink to="/" className="self-center whitespace-nowrap text-3xl font-semibold font-tangerine text-white">
             <img
-              src=""
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMMq3sOVrHjrX8qx7SOuFF8b4gL7zbI1V6MA&s"
               alt="Logo"
               style={imageStyle}
+
+              className="rounded-full"
             />
           </NavLink>
         </div>
@@ -48,44 +50,7 @@ export default function Header() {
         {/* Right Section: Navigation links and user controls */}
         <div className="flex items-center space-x-8">
           <div className="hidden md:flex space-x-8">
-            <NavLink to="/" className={({ isActive }) => isActive ? "text-black" : "text-white"}>
-              Home
-            </NavLink>
-            <Dropdown label={<span className={isAboutUsActive ? "text-black" : "text-white"}>About Us</span>} inline>
-              <Link to="/history">
-                <DropdownItem>History</DropdownItem>
-              </Link>
-              <Link to="/achievements">
-                <DropdownItem>Achievements</DropdownItem>
-              </Link>
-              <Link to="/objectives">
-                <DropdownItem>Objectives</DropdownItem>
-              </Link>
-            </Dropdown>
-
-            <Dropdown label={<span className={isTeamActive ? "text-black" : "text-white"}>Team</span>} inline>
-              <Link to="/apply-membership">
-                <DropdownItem>Membership</DropdownItem>
-              </Link>
-              
-            </Dropdown>
-
-            <NavLink to="/photo" className={({ isActive }) => isActive ? "text-black" : "text-white"}>
-              Photos
-            </NavLink>
-
-            <Dropdown label={<span className={isNewsActive ? "text-black" : "text-white"}>News</span>} inline>
-              <Link to="/article">
-                <DropdownItem>Articles</DropdownItem>
-              </Link>
-              <Link to="/activities">
-                <DropdownItem>Guid Activities</DropdownItem>
-              </Link>
-            </Dropdown>
            
-            <NavLink to="/contact" className={({ isActive }) => isActive ? "text-black" : "text-white"}>
-              Contact Us
-            </NavLink>
 
           </div>
 
@@ -115,11 +80,16 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+{/*
+
+<div className="md:hidden">
             <Navbar.Toggle>
               <HiMenu className="text-white text-3xl" />
             </Navbar.Toggle>
-          </div>
+</div>
+*/}
+          
+          
         </div>
       </div>
 
