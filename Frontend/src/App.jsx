@@ -22,11 +22,11 @@ export default function App() {
         <Route path="/sign-up" element={<SignUp/>}/>
         
 
-        <Route element={<PrivateRoute/>}/>
+        <Route element={<PrivateRoute/>}>
           <Route path="/dashboard" element={<DashBoard/>}/>
           <Route path="/booking-summary" element={<BookingSummary/>}/>
           <Route path="/success" element={<SuccessPage/>}/>
-        <Route/>
+        </Route>
 
         <Route element={<OnlyAdminPrivateRoute/>}>
            <Route path="/addstudios" element={<AddStudio/>}/>

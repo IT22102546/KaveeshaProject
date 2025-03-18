@@ -1,6 +1,6 @@
 import { Sidebar } from "flowbite-react";
 import { useEffect, useState } from "react";
-import { HiArchive, HiArrowSmRight, HiFolderAdd, HiGift, HiOutlineUserGroup, HiUser, HiOutlineMail, HiPhotograph, HiStar, HiUserAdd, HiReceiptRefund, HiAcademicCap } from 'react-icons/hi';
+import { HiArchive, HiArrowSmRight, HiFolderAdd, HiGift, HiOutlineUserGroup, HiUser, HiOutlineMail, HiPhotograph, HiStar, HiUserAdd, HiReceiptRefund, HiAcademicCap, HiHome } from 'react-icons/hi';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { signOut } from "../redux/user/userSlice";
@@ -57,6 +57,15 @@ export default function DashSideBar() {
                   as='div'
                 >
                   Users
+                </Sidebar.Item>
+              </Link>
+              <Link to='/dashboard?tab=studios' key="studios">
+                <Sidebar.Item
+                  active={tab === 'studios'}
+                  icon={HiHome}
+                  as='div'
+                >
+                  Studios
                 </Sidebar.Item>
               </Link>
 

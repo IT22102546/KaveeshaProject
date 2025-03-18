@@ -68,3 +68,23 @@ export const getStudios = async (req, res, next) => {
     next(error);
   }
 };
+
+export const deleteStudio = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    await Studio.findByIdAndDelete(id);
+    res.status(200).json({ message: 'Studio deleted successfully' });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const updateStudio = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const updatedStudio = await Studio.findByIdAndUpdate(id, req.body, { new: true });
+    res.status(200).json(updatedStudio);
+  } catch (error) {
+    next(error);
+  }
+};
